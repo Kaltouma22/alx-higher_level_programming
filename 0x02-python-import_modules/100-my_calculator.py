@@ -3,21 +3,22 @@ import sys
 from calculator_1 import add, sub, mul, div
 
 if __name__ == "__main__":
-    operations = {
-        "+":
-        "-":
-        "*":
-        "/":
-    }
-
-    if (len(sys.argv) != 4):
+    if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
     a = int(sys.argv[1])
-    b = int(sys.argv[3])
     oper = sys.argv[2]
-    if oper not in operations:
+    b = int(sys.argv[3])
+
+    if oper == "+":
+        print(f"{a} + {b} = {add(a, b)}")
+    elif oper == "-":
+        print(f"{a} - {b} = {sub(a, b)}")
+    elif oper == "*":
+        print(f"{a} * {b} = {mul(a, b)}")
+    elif oper == "/":
+        print(f"{a} / {b} = {div(a, b)}")
+    else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    print(f"{a} {oper} {b} = {operations[oper](a, b)}")
