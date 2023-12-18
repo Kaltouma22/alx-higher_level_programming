@@ -10,8 +10,7 @@ def safe_print_list_integers(my_list=[], x=0):
                 print("{:d}".format(val), end='')
                 prnt_ntg += 1
             elmt_prnt += 1
-    except IndexError:
+    except (ValueError, TypeError):
         pass
-
     print()
     return prnt_ntg
