@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def safe_print_list_integers(my_list=[], x=0):
     prnt_ntg = 0
     elmt_prnt = 0
