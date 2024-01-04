@@ -1,16 +1,20 @@
 #!/usr/bin/python3
-""" This script defines an empty Rectangle class """
+"""This Module for Rectangle class."""
 
 
 class Rectangle:
-    """ Class to define a rectangle """
+    """ Class to define a Rectangle """
 
     number_of_instances = 0
+    """ int: Number of active instance """
+
     print_symbol = "#"
+    """ type: This print symbol, and can be any type """
+
     def __init__(self, width=0, height=0):
         """ Instantiation with optional width and height """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
