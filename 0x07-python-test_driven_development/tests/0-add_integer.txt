@@ -2,52 +2,52 @@ Import function from module:
 
     >>> add_integer = __import__('0-add_integer').add_integer
 
-Test one int argument:
+Test one integer arg
 
     >>> add_integer(2)
     100
 
-Test one int argument and check default second:
+Test one integer arg and default second:
 
     >>> add_integer(0)
     98
 
-Test one float:
+Test float:
 
     >>> add_integer(123.9)
     221
 
-Test one negative float:
+Test negative float:
 
     >>> add_integer(-95.5)
     3
 
-Test two integers:
+Test two ints:
 
     >>> add_integer(10, 5)
     15
 
-Test two big integers:
+Test two big ints:
 
     >>> add_integer(999999998, 999999999)
     1999999997
 
-Test positive, negative integers:
+Test positive and negative ints:
 
     >>> add_integer(34263478, -89234582395)
     -89200318917
 
-Test negative, positive integers:
+Test negative and positive ints:
 
     >>> add_integer(-13947692, 57234)
     -13890458
 
-Test an integer and a float:
+Test int and float:
 
     >>> add_integer(123, 7.987)
     130
 
-Test a float and an integer:
+Test float and int:
 
     >>> add_integer(234234.43545, 4352345)
     4586579
@@ -71,28 +71,28 @@ Add nan:
     ...
     ValueError: cannot convert float NaN to integer
 
-Test first arg invalid:
+Test first argument invalid:
 
     >>> add_integer("foo", 0)
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
 
-Test second arg invalid:
+Test second argument invalid:
 
     >>> add_integer(123123, [])
     Traceback (most recent call last):
         ...
     TypeError: b must be an integer
 
-Test both args invalid:
+Test both arguments invalid:
 
     >>> add_integer(None, None)
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
 
-Test two strings:
+Test two str:
 
     >>> add_integer("foo", "bar")
     Traceback (most recent call last):
@@ -104,4 +104,3 @@ Test float overflow:
     Traceback (most recent call last):
     ...
     OverflowError: cannot convert float infinity to integer
-    
