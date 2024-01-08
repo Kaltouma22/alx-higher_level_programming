@@ -3,13 +3,11 @@
 
 
 def lookup(obj):
-    """
-    Returns a list containing the attributes and methods of the given object.
-
+    """Looks up the object attributes and methods.
     Args:
-    - obj: Any Python object whose attributes and methods are to be listed.
+        obj (object): object whose attributes and methods are to be listed.
 
     Returns:
-    - A list containing the attributes and methods of the provided object.
+        A list containing the attributes and methods of the provided object.
     """
     return dir(obj )
