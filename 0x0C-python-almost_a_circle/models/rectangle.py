@@ -87,7 +87,7 @@ class Rectangle(Base):
         attr = {'id': id, 'width': width, 'height': height, 'x': x, 'y': y}
         for key, value in attr.items():
             if value is not None:
-                 setattr(self, attr, value)
+                 setattr(self, key, value)
 
     def update(self, *args, **kwargs):
         """Assign args to attr using both positional and keyword args."""

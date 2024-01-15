@@ -25,3 +25,17 @@ class Square(Rectangle):
         """Setter for the size attribute."""
         self.width = value
         self.height = value
+
+    def __update(self, id=None, size=None, x=None, y=None):
+        """Internal method that updates instance attr using keyword args"""
+        attr = {'id': id, 'size': size, 'x': x, 'y': y}
+        for key, value in attr.items():
+            if value is not None:
+                 setattr(self, key, value)
+
+    def update(self, *args, **kwargs):
+        """Assign args to attr using both positional and keyword args."""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
