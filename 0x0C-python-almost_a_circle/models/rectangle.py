@@ -81,3 +81,17 @@ class Rectangle(Base):
         """Return a string representation of the Rectangle."""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
                 {self.width}/{self.height}"
+
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """Internal method that updates instance attr using keyword args"""
+        attr = {'id': id, 'width': width, 'height': height, 'x': x, 'y': y}
+        for key, value in attr.items():
+            if value is not None:
+                 setattr(self, attr, value)
+
+    def update(self, *args, **kwargs):
+        """Assign args to attr using both positional and keyword args."""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
