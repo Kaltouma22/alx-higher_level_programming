@@ -40,7 +40,7 @@ class base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Create an instance with attr set based on the provided dict."""
+        """Create an instance with attri set based on the provided dict."""
         from models.rectangle import Rectangle
         from models.square import Square
         if cls == Rectangle:
