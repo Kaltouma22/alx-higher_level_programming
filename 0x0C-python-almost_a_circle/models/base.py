@@ -37,3 +37,17 @@ class base:
             list_objs = [o.to_dictionary() for o in list_objs]
         with open(f"{cls.__name__}.json", "w", encoding="utf-8") as file:
             file.write(cls.to_json_string(list_objs))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Create an instance with attr set based on the provided dict."""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls == Rectangle:
+            dummy_instance = Rectangle(1, 1)
+        elif cls == Square:
+            dummy_instance = Square(1)
+        else:
+            dummy_instance = None
+        dummy_instance.update(**dictionary)
+        return dummy_instance
