@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Module defining the Base class."""
-from json import dumps, loads
-import csv
 
 
 class base:
@@ -11,5 +9,8 @@ class base:
 
     def __init__(self, id=None):
         """Initialize the Base instance."""
-        self.id = id if id is not None else self.__class__.__nb_objects + 1
-        self.__class__.__nb_objects += 1
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
