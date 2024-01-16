@@ -54,11 +54,11 @@ class Rectangle(Base):
         """Setter for y attribute."""
         self.__y = value
 
-    def validate_attr(self, name, value, equal=True):
+    def validate_attr(self, name, value, eq=True):
         """Validate that the value is an integer and set the attribute."""
         if type(value) != int:
             raise TypeError(f"{name} must be an integer")
-        if equal and value < 0:
+        if eq and value < 0:
             raise ValueError(f"{name} must be >= 0")
-        elif not equal and value <= 0:
+        elif not eq and value <= 0:
             raise ValueError(f"{name} must be > 0")
