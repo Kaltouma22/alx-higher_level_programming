@@ -56,3 +56,13 @@ class Base:
             dummy_instance = None
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """Function that loads string from file and unjsonfiles"""
+        from os import path
+        file_js = f"{cls.__name__}.json"
+        if not path.isfile(file_js):
+            return []
+        with open(file_js, "r", encoding="utf-8") as file:
+            return [cls.create(**d) for d in cls.from_json_string(file.read())]
