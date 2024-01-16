@@ -2,13 +2,17 @@
 """Module defining the Base class."""
 
 
-class base:
+class Base:
     """Base class for managing id attribute."""
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initialize the Base instance."""
+        """Initialize the Base instance.
+
+        Args:
+            id (int): The identity of the new base.
+        """
         if id is not None:
             self.id = id
         else:
