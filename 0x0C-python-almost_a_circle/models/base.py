@@ -42,3 +42,17 @@ class Base:
         if json_string is None or not json_string:
             return []
         return loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Create an instance with attri set based on the provided dict."""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls == Rectangle:
+            dummy_instance = Rectangle(1, 1)
+        elif cls == Square:
+            dummy_instance = Square(1)
+        else:
+            dummy_instance = None
+        dummy_instance.update(**dictionary)
+        return dummy_instance
